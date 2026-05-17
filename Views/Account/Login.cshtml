@@ -1,0 +1,48 @@
+@model WebMovie.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<div class="auth-page-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Sign In</h2>
+        
+        <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+            }
+
+            <div class="auth-form-group">
+                <input asp-for="Email" class="auth-input" placeholder=" " required />
+                <label asp-for="Email" class="auth-input-label">Email Address</label>
+                <span asp-validation-for="Email" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-form-group">
+                <input asp-for="Password" class="auth-input" placeholder=" " required />
+                <label asp-for="Password" class="auth-input-label">Password</label>
+                <span asp-validation-for="Password" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-checkbox-group">
+                <label class="auth-checkbox-label">
+                    <input asp-for="RememberMe" class="auth-checkbox" type="checkbox" />
+                    Remember me
+                </label>
+                <a href="#" class="auth-switch-link" onclick="alert('Password reset functionality is under development.'); return false;">Need help?</a>
+            </div>
+
+            <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+
+        <div class="mt-4">
+            <span class="auth-switch-text">New to Netflix?</span>
+            <a asp-controller="Account" asp-action="Register" class="auth-switch-link">Sign up now.</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

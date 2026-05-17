@@ -1,0 +1,598 @@
+@model IEnumerable<WebMovie.Models.Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Banner (Save Me Cover) -->
+<section class="hero-banner">
+    <div class="hero-content">
+        <span class="hero-meta-subtitle">Season 1 &bull; 16 Episode</span>
+        
+        <h1 class="hero-title">SAVE ME</h1>
+        
+        <div class="hero-rating-info">
+            <span><i class="bi bi-star-fill"></i> <span class="hero-rating-num">9.1</span></span>
+            <span>2017</span>
+            <span>&bull;</span>
+            <span>Exciting story</span>
+            <span>&bull;</span>
+            <span>2 season</span>
+        </div>
+        
+        <p class="hero-description">
+            Series adapted from the webcomic entitled Out of the World by writer Jo Geum-san. A group of young people struggle to rescue their former classmate from a mysterious religious cult.
+        </p>
+        
+        <div class="hero-buttons">
+            <button class="btn-premium btn-premium-red" onclick="playMovie('Save Me', 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=1200&q=80')">
+                <i class="bi bi-play-fill"></i> WATCH
+            </button>
+            <button class="btn-premium btn-premium-outline">
+                <i class="bi bi-plus-lg"></i> ADD LIST
+            </button>
+        </div>
+    </div>
+    
+    <!-- Hero Slider Dots -->
+    <div class="hero-slider-indicators">
+        <span class="slider-dot"></span>
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+    </div>
+</section>
+
+<!-- Trends Now Section -->
+<section class="content-section">
+    <div class="section-header-row">
+        <div class="section-title-wrap">
+            <i class="bi bi-graph-up-arrow"></i>
+            <h2 class="section-title">Trends Now</h2>
+        </div>
+    </div>
+    
+    <!-- Category filter badges -->
+    <div class="filter-container">
+        <div class="filter-wrapper" id="trends-category-wrapper">
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Action</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Adventure</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Biography</button>
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Crime</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Comedy</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Documentary</button>
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Drama</button>
+        </div>
+    </div>
+
+    <!-- Scrollable Movie Grid -->
+    <div class="movie-grid-container">
+        <button class="slider-arrow-btn slider-arrow-left" onclick="scrollGrid('trends-grid', -300)">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="slider-arrow-btn slider-arrow-right" onclick="scrollGrid('trends-grid', 300)">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+        
+        <div class="movie-grid py-2" id="trends-grid" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; scrollbar-width: none;">
+            <!-- Card 1: Vincenzo -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('Vincenzo', 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&h=750&q=80" alt="Vincenzo" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Vincenzo</h4>
+                    <div class="movie-card-meta">
+                        <span>2021</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">8.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Tomorrow -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('Tomorrow', 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=500&h=750&q=80" alt="Tomorrow" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Tomorrow</h4>
+                    <div class="movie-card-meta">
+                        <span>2022</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">7.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Sweet Home -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('Sweet Home', 'https://images.unsplash.com/photo-1518709768805-4e9042af9f23?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1518709768805-4e9042af9f23?auto=format&fit=crop&w=500&h=750&q=80" alt="Sweet Home" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Sweet Home</h4>
+                    <div class="movie-card-meta">
+                        <span>2020</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">7.3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Flower Of Evil -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('Flower Of Evil', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&h=750&q=80" alt="Flower Of Evil" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Flower Of Evil</h4>
+                    <div class="movie-card-meta">
+                        <span>2020</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">8.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Lawless Lawyer -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('Lawless Lawyer', 'https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=500&h=750&q=80" alt="Lawless Lawyer" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Lawless Lawyer</h4>
+                    <div class="movie-card-meta">
+                        <span>2018</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">9.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: My Name -->
+            <div class="movie-card" style="flex: 0 0 200px;" onclick="playMovie('My Name', 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&h=750&q=80" alt="My Name" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">My Name</h4>
+                    <div class="movie-card-meta">
+                        <span>2021</span>
+                        <div class="movie-card-rating stars-muted">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Movies Grid Section -->
+<section class="content-section" style="margin-top: 30px;">
+    <!-- Title & Inline Nav Tabs -->
+    <div class="section-header-row">
+        <div class="section-title-wrap">
+            <i class="bi bi-film"></i>
+            <h2 class="section-title">Movies</h2>
+        </div>
+        
+        <!-- Movies Navigation tabs and search -->
+        <div class="section-nav-tabs align-items-center">
+            <a href="#" class="section-nav-link active">Movies</a>
+            <a href="#" class="section-nav-link">Series</a>
+            <a href="#" class="section-nav-link">Original Series</a>
+            
+            <div class="search-input-wrap ms-lg-3">
+                <i class="bi bi-search"></i>
+                <input type="text" class="search-input" id="movie-search" placeholder="Search title..." onkeyup="filterMoviesByName(this.value)" />
+            </div>
+        </div>
+    </div>
+    
+    <!-- Category filter badges -->
+    <div class="filter-container">
+        <div class="filter-wrapper" id="movies-category-wrapper">
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Action</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Adventure</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Biography</button>
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Crime</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Comedy</button>
+            <button class="badge-filter" onclick="toggleCategoryFilter(this)">Documentary</button>
+            <button class="badge-filter active" onclick="toggleCategoryFilter(this)">Drama</button>
+        </div>
+    </div>
+
+    <!-- Secondary Controls Row (Sorting & Rating Slider) -->
+    <div class="controls-row">
+        <div class="sort-group">
+            <span class="sort-label">Sort by:</span>
+            <button class="sort-pill active" onclick="toggleSort(this)">Latest</button>
+            <select class="sort-select" onchange="alert('Sorted by option successfully!')">
+                <option value="year">Year</option>
+                <option value="oldest">Oldest</option>
+            </select>
+            <select class="sort-select" onchange="alert('Sorted alphabetically!')">
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-a</option>
+            </select>
+        </div>
+        
+        <!-- Interactive Rating Slider -->
+        <div class="rating-slider-wrap">
+            <i class="bi bi-star-fill"></i>
+            <div class="slider-track" id="slider-track" onclick="adjustRatingSlider(event)">
+                <div class="slider-fill" id="slider-fill" style="width: 63%;"></div>
+                <div class="slider-handle" id="slider-handle" style="left: 63%;" onmousedown="startDrag(event)"></div>
+            </div>
+            <span class="rating-value" id="rating-value">6.3</span>
+        </div>
+    </div>
+
+    <!-- Movie Cards Grid -->
+    <div class="movie-grid-container">
+        <div class="movie-grid" id="movies-cards-grid">
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var post in Model)
+                {
+                    <div class="movie-card" data-title="@post.Title" onclick="playMovie('@post.Title', '@post.ImageUrl')">
+                        <div class="movie-poster-wrap">
+                            <img src="@post.ImageUrl" alt="@post.Title" class="movie-poster">
+                            <div class="movie-overlay">
+                                <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                            </div>
+                        </div>
+                        <div class="movie-info-block">
+                            <h4 class="movie-card-title">@post.Title</h4>
+                            <div class="movie-card-meta">
+                                <span>@post.Year</span>
+                                <div class="movie-card-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span class="movie-card-rating-val">@post.Rating.ToString("0.0")</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <!-- Card 1: One Ordinary Day -->
+            <div class="movie-card" data-title="One Ordinary Day" onclick="playMovie('One Ordinary Day', 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1585647347483-22b66260dfff?auto=format&fit=crop&w=500&h=750&q=80" alt="One Ordinary Day" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">One Ordinary Day</h4>
+                    <div class="movie-card-meta">
+                        <span>2021</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">8.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: The Call -->
+            <div class="movie-card" data-title="The Call" onclick="playMovie('The Call', 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=500&h=750&q=80" alt="The Call" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">The Call</h4>
+                    <div class="movie-card-meta">
+                        <span>2020</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">7.1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: The Witch -->
+            <div class="movie-card" data-title="The Witch" onclick="playMovie('The Witch', 'https://images.unsplash.com/photo-1519074069444-1ba4e6663104?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1519074069444-1ba4e6663104?auto=format&fit=crop&w=500&h=750&q=80" alt="The Witch" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">The Witch</h4>
+                    <div class="movie-card-meta">
+                        <span>2021</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">8.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Midnight -->
+            <div class="movie-card" data-title="Midnight" onclick="playMovie('Midnight', 'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1492446845049-9c50cc313f00?auto=format&fit=crop&w=500&h=750&q=80" alt="Midnight" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Midnight</h4>
+                    <div class="movie-card-meta">
+                        <span>2021</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">6.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Alive -->
+            <div class="movie-card" data-title="Alive" onclick="playMovie('Alive', 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&h=750&q=80')">
+                <div class="movie-poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&h=750&q=80" alt="Alive" class="movie-poster">
+                    <div class="movie-overlay">
+                        <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                </div>
+                <div class="movie-info-block">
+                    <h4 class="movie-card-title">Alive</h4>
+                    <div class="movie-card-meta">
+                        <span>2020</span>
+                        <div class="movie-card-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span class="movie-card-rating-val">6.3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full-screen Cinematic Streaming Simulation Modal -->
+<div class="modal fade" id="streamModal" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(20px);">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-lg-down">
+        <div class="modal-content border-0 text-white rounded-4 overflow-hidden" style="background-color: #0d0d0d; box-shadow: 0 0 40px rgba(229, 9, 20, 0.4);">
+            <!-- Modal Header -->
+            <div class="modal-header border-0 bg-transparent px-4 pt-4 pb-0 position-absolute w-100 start-0 top-0 d-flex justify-content-between align-items-center" style="z-index: 100;">
+                <h4 class="modal-title fw-bold text-danger" id="streamTitle" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Stream Playback</h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="filter: drop-shadow(0 2px 5px rgba(0,0,0,0.9));"></button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body p-0 position-relative">
+                <!-- Video Simulator Backing -->
+                <div class="ratio ratio-16x9 w-100" style="background-color: #000;">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center p-4 position-relative" id="streamPlayerContainer">
+                        <!-- Playback Background Backdrop -->
+                        <div id="modalBackdropImg" style="position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; opacity: 0.25; filter: blur(8px);"></div>
+                        
+                        <!-- Simulated Controls Glare -->
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); z-index:10;">
+                            <div class="d-flex align-items-center gap-3">
+                                <button class="btn btn-sm btn-danger rounded-circle p-2" onclick="togglePlayState(this)"><i class="bi bi-pause-fill fs-5"></i></button>
+                                <span class="small text-white-50">0:14 / 2:38</span>
+                                <div class="progress flex-grow-1 bg-secondary rounded-pill" style="height: 6px; cursor: pointer;">
+                                    <div class="progress-bar bg-danger rounded-pill" style="width: 10%;"></div>
+                                </div>
+                                <i class="bi bi-volume-up-fill fs-5 cursor-pointer"></i>
+                                <i class="bi bi-fullscreen fs-5 cursor-pointer ms-2"></i>
+                            </div>
+                        </div>
+
+                        <!-- Spin loader and message -->
+                        <div class="spinner-border text-danger mb-4" role="status" style="width: 4rem; height: 4rem; z-index: 10; box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <h2 class="fw-bold mb-2 text-white" id="modalMovieTitle" style="z-index:10; font-family: var(--font-heading); text-shadow: 0 2px 10px rgba(0,0,0,0.9);">MOVIE TITLE</h2>
+                        <p class="text-danger-emphasis fs-5 mb-0" id="streamStatusText" style="z-index: 10; letter-spacing: 1px;">BUFFERING CINEMATIC HIGH-SPEED STREAM...</p>
+                        <p class="text-white-50 mt-2 small" style="z-index: 10;">Connecting secure P2P node... [1080p Ultra HD Available]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Category Badge Filter Toggles
+        function toggleCategoryFilter(button) {
+            button.classList.toggle('active');
+            if (button.classList.contains('active')) {
+                // Subtle feedback accent
+                button.style.transform = 'scale(1.05)';
+                setTimeout(() => button.style.transform = 'none', 150);
+            }
+        }
+
+        // Horizontal scroll grid helper
+        function scrollGrid(gridId, offset) {
+            const grid = document.getElementById(gridId);
+            grid.scrollBy({
+                left: offset,
+                behavior: 'smooth'
+            });
+        }
+
+        // Live Search Filter for Movies grid
+        function filterMoviesByName(query) {
+            const searchQuery = query.toLowerCase().trim();
+            const cards = document.querySelectorAll('#movies-cards-grid .movie-card');
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (searchQuery === '' || title.includes(searchQuery)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.4s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Sorting buttons toggling
+        function toggleSort(button) {
+            const buttons = button.parentNode.querySelectorAll('.sort-pill');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+
+        // Interactive Rating Slider drag-n-click features
+        const sliderTrack = document.getElementById('slider-track');
+        const sliderFill = document.getElementById('slider-fill');
+        const sliderHandle = document.getElementById('slider-handle');
+        const ratingValText = document.getElementById('rating-value');
+        let isDragging = false;
+
+        function updateSliderValue(clientX) {
+            const rect = sliderTrack.getBoundingClientRect();
+            let position = (clientX - rect.left) / rect.width;
+            position = Math.max(0, Math.min(1, position)); // Keep inside boundaries
+            
+            const ratingVal = (position * 10).toFixed(1);
+            
+            // Set visuals
+            sliderFill.style.width = (position * 100) + '%';
+            sliderHandle.style.left = (position * 100) + '%';
+            ratingValText.textContent = ratingVal;
+            
+            // Highlight cards based on rating if desired
+            filterMoviesByRating(parseFloat(ratingVal));
+        }
+
+        function adjustRatingSlider(event) {
+            updateSliderValue(event.clientX);
+        }
+
+        function startDrag(event) {
+            isDragging = true;
+            event.preventDefault();
+            document.addEventListener('mousemove', dragHandler);
+            document.addEventListener('mouseup', stopDragHandler);
+        }
+
+        function dragHandler(event) {
+            if (isDragging) {
+                updateSliderValue(event.clientX);
+            }
+        }
+
+        function stopDragHandler() {
+            isDragging = false;
+            document.removeEventListener('mousemove', dragHandler);
+            document.removeEventListener('mouseup', stopDragHandler);
+        }
+
+        // Dynamic Filtering based on Slider Rating value
+        function filterMoviesByRating(minRating) {
+            const cards = document.querySelectorAll('#movies-cards-grid .movie-card');
+            cards.forEach(card => {
+                const ratingSpan = card.querySelector('.movie-card-rating-val');
+                if (ratingSpan) {
+                    const rating = parseFloat(ratingSpan.textContent);
+                    if (!isNaN(rating) && rating >= minRating) {
+                        card.style.opacity = '1';
+                        card.style.pointerEvents = 'auto';
+                        card.style.transform = 'none';
+                    } else if (!isNaN(rating)) {
+                        card.style.opacity = '0.35';
+                        card.style.transform = 'scale(0.95)';
+                    }
+                }
+            });
+        }
+
+        // Full Screen Video Streaming Simulation
+        let streamModal = null;
+        let bufferingTimeout = null;
+
+        function playMovie(title, backdropUrl) {
+            if (!streamModal) {
+                streamModal = new bootstrap.Modal(document.getElementById('streamModal'));
+            }
+            
+            // Populate Modal Content
+            document.getElementById('modalMovieTitle').textContent = title.toUpperCase();
+            document.getElementById('modalBackdropImg').style.backgroundImage = `url('${backdropUrl}')`;
+            
+            const spinner = document.querySelector('#streamPlayerContainer .spinner-border');
+            const statusText = document.getElementById('streamStatusText');
+            
+            // Reset modal playing state visualizer
+            spinner.style.display = 'inline-block';
+            statusText.textContent = "BUFFERING CINEMATIC HIGH-SPEED STREAM...";
+            statusText.classList.remove('text-success');
+            statusText.classList.add('text-danger-emphasis');
+            
+            const playPauseIcon = document.querySelector('#streamPlayerContainer button i');
+            playPauseIcon.className = 'bi bi-pause-fill fs-5';
+            
+            streamModal.show();
+
+            // Simulate Buffering complete in 2 seconds
+            if (bufferingTimeout) clearTimeout(bufferingTimeout);
+            bufferingTimeout = setTimeout(() => {
+                spinner.style.display = 'none';
+                statusText.textContent = "NOW STREAMING IN ULTRA HD 4K (60 FPS)";
+                statusText.classList.remove('text-danger-emphasis');
+                statusText.classList.add('text-success');
+            }, 2200);
+        }
+
+        function togglePlayState(btn) {
+            const icon = btn.querySelector('i');
+            const statusText = document.getElementById('streamStatusText');
+            const spinner = document.querySelector('#streamPlayerContainer .spinner-border');
+            
+            if (icon.classList.contains('bi-pause-fill')) {
+                icon.className = 'bi bi-play-fill fs-5';
+                statusText.textContent = "PLAYBACK PAUSED";
+                statusText.className = 'text-warning fs-5 mb-0';
+                spinner.style.display = 'none';
+                if (bufferingTimeout) clearTimeout(bufferingTimeout);
+            } else {
+                icon.className = 'bi bi-pause-fill fs-5';
+                statusText.textContent = "NOW STREAMING IN ULTRA HD 4K (60 FPS)";
+                statusText.className = 'text-success fs-5 mb-0';
+            }
+        }
+    </script>
+}

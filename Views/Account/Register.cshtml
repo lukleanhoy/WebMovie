@@ -1,0 +1,59 @@
+@model WebMovie.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="auth-page-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Sign Up</h2>
+        
+        <form asp-controller="Account" asp-action="Register" method="post" autocomplete="off">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+            }
+
+            <div class="auth-form-group">
+                <input asp-for="Username" class="auth-input" placeholder=" " required />
+                <label asp-for="Username" class="auth-input-label">Username</label>
+                <span asp-validation-for="Username" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-form-group">
+                <input asp-for="Email" class="auth-input" placeholder=" " required />
+                <label asp-for="Email" class="auth-input-label">Email Address</label>
+                <span asp-validation-for="Email" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-form-group">
+                <input asp-for="Password" class="auth-input" placeholder=" " required />
+                <label asp-for="Password" class="auth-input-label">Password</label>
+                <span asp-validation-for="Password" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-form-group">
+                <input asp-for="ConfirmPassword" class="auth-input" placeholder=" " required />
+                <label asp-for="ConfirmPassword" class="auth-input-label">Confirm Password</label>
+                <span asp-validation-for="ConfirmPassword" class="auth-input-error"></span>
+            </div>
+
+            <div class="auth-checkbox-group">
+                <label class="auth-checkbox-label">
+                    <input type="checkbox" class="auth-checkbox" required />
+                    I agree to the Terms of Use & Privacy Policy.
+                </label>
+            </div>
+
+            <button type="submit" class="auth-btn">Register</button>
+        </form>
+
+        <div class="mt-4">
+            <span class="auth-switch-text">Already have an account?</span>
+            <a asp-controller="Account" asp-action="Login" class="auth-switch-link">Sign in now.</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
