@@ -33,6 +33,8 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        // Programmatically wipe and rebuild the database to apply newly added tables (like Posts)
+        dbContext.Database.EnsureDeleted();
         dbContext.Database.EnsureCreated();
     }
     catch (Exception ex)

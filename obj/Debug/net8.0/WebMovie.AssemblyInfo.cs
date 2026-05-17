@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebMovie")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c3a5f39392ecbe79c7a552cad89cc2bb975984f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b95dfdf920dfdcf74ddd0564a44fd961214a3f1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebMovie")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebMovie")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
