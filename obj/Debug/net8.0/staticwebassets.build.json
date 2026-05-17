@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GOY1QHMhgTsYQZ+0RIuGCmu7ACMlsDKgy0rwP5mX278=",
+  "Hash": "QhmIL6sddd/shES2op+rrTHiDkDyAJsKbsw/cPeGjXI=",
   "Source": "WebMovie",
   "BasePath": "_content/WebMovie",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\images\\admin_profile.jpg",
+      "SourceId": "WebMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\",
+      "BasePath": "_content/WebMovie",
+      "RelativePath": "images/admin_profile.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\admin_profile.jpg"
     },
     {
       "Identity": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\images\\hero_save_me.png",
@@ -1212,6 +1231,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\uploads\\30e7c2ff-a20c-445c-862b-e2a95b043356_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "SourceId": "WebMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\",
+      "BasePath": "_content/WebMovie",
+      "RelativePath": "uploads/30e7c2ff-a20c-445c-862b-e2a95b043356_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\30e7c2ff-a20c-445c-862b-e2a95b043356_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg"
+    },
+    {
+      "Identity": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\uploads\\77a92de6-12ba-4502-b66e-c8154234c601_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "SourceId": "WebMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\",
+      "BasePath": "_content/WebMovie",
+      "RelativePath": "uploads/77a92de6-12ba-4502-b66e-c8154234c601_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\77a92de6-12ba-4502-b66e-c8154234c601_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg"
     }
   ]
 }

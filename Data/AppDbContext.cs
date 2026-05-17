@@ -11,6 +11,8 @@ namespace WebMovie.Data
 
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Post> Posts { get; set; } = null!;
+        public DbSet<Movie> Movies { get; set; } = null!;
+        public DbSet<EpisodeLink> EpisodeLinks { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +33,13 @@ namespace WebMovie.Data
                 .WithMany()
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            // Configure relationship between EpisodeLink and Movie
+            modelBuilder.Entity<EpisodeLink>()
+                .HasOne(el => el.Movie)
+                .WithMany()
+                .HasForeignKey(el => el.MovieId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

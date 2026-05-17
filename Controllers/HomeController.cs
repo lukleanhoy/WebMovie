@@ -20,8 +20,20 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var posts = await _context.Posts.OrderByDescending(p => p.CreatedAt).ToListAsync();
-        return View(posts);
+        var movies = await _context.Movies.OrderByDescending(m => m.CreatedAt).ToListAsync();
+        return View(movies);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetEpisodes(int id)
+    {
+        var episodes = await _context.EpisodeLinks
+            .Where(e => e.MovieId == id)
+            .OrderBy(e => e.Episode)
+            .Select(e => new { e.Episode, e.Link })
+            .ToListAsync();
+            
+        return Json(episodes);
     }
 
     public IActionResult Privacy()

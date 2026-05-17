@@ -1,0 +1,73 @@
+@model WebMovie.Models.Movie
+@{
+    ViewData["Title"] = "Create New Movie";
+}
+
+<div class="auth-page-container">
+    <div class="auth-card" style="max-width: 650px;">
+        <h2 class="auth-title">Create New Movie</h2>
+        
+        <form asp-controller="Movie" asp-action="Create" method="post" enctype="multipart/form-data" autocomplete="off">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+            }
+
+            <!-- Title -->
+            <div class="auth-form-group">
+                <input asp-for="Title" class="auth-input" placeholder=" " required />
+                <label asp-for="Title" class="auth-input-label">Movie Title</label>
+                <span asp-validation-for="Title" class="auth-input-error"></span>
+            </div>
+
+            <!-- Poster File Upload -->
+            <div class="auth-form-group">
+                <label class="d-block mb-2 text-white-50 small fw-semibold">Poster (Image File)</label>
+                <input type="file" name="poster" class="form-control bg-dark border-secondary text-white" accept="image/*" required />
+            </div>
+
+            <!-- Thumbnail File Upload -->
+            <div class="auth-form-group">
+                <label class="d-block mb-2 text-white-50 small fw-semibold">Thumbnail (Image File)</label>
+                <input type="file" name="thumbnail" class="form-control bg-dark border-secondary text-white" accept="image/*" required />
+            </div>
+
+            <!-- Category Select -->
+            <div class="auth-form-group">
+                <select asp-for="Category" class="auth-input" style="background-color: #333333; color: white;" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Korean Drama">Korean Drama</option>
+                    <option value="Action Movie">Action Movie</option>
+                    <option value="Adventure Series">Adventure Series</option>
+                    <option value="Comedy Movie">Comedy Movie</option>
+                    <option value="Crime & Thriller">Crime & Thriller</option>
+                    <option value="Documentary">Documentary</option>
+                </select>
+                <span asp-validation-for="Category" class="auth-input-error"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="auth-form-group">
+                <textarea asp-for="Description" class="auth-input" placeholder=" " rows="3" style="resize: none; min-height: 100px;" required></textarea>
+                <label asp-for="Description" class="auth-input-label">Description / Synopsis</label>
+                <span asp-validation-for="Description" class="auth-input-error"></span>
+            </div>
+
+            <!-- End Episode -->
+            <div class="auth-form-group">
+                <input asp-for="EndEpisode" type="number" class="auth-input" placeholder=" " required min="1" />
+                <label asp-for="EndEpisode" class="auth-input-label">End Episode (Total Episodes)</label>
+                <span asp-validation-for="EndEpisode" class="auth-input-error"></span>
+            </div>
+
+            <div class="d-flex gap-3 mt-4">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-premium btn-premium-outline flex-grow-1 text-center justify-content-center">Cancel</a>
+                <button type="submit" class="auth-btn flex-grow-1 mb-0">Create Movie</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

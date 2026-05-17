@@ -1,4 +1,4 @@
-@model IEnumerable<WebMovie.Models.Post>
+@model IEnumerable<WebMovie.Models.Movie>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -262,22 +262,22 @@
         <div class="movie-grid" id="movies-cards-grid">
             @if (Model != null && Model.Any())
             {
-                @foreach (var post in Model)
+                @foreach (var movie in Model)
                 {
-                    <div class="movie-card" data-title="@post.Title" onclick="playMovie('@post.Title', '@post.ImageUrl')">
+                    <div class="movie-card" data-title="@movie.Title" onclick="playMovie('@movie.Title', '@movie.PosterPath')">
                         <div class="movie-poster-wrap">
-                            <img src="@post.ImageUrl" alt="@post.Title" class="movie-poster">
+                            <img src="@movie.PosterPath" alt="@movie.Title" class="movie-poster">
                             <div class="movie-overlay">
                                 <div class="overlay-play-btn"><i class="bi bi-play-fill"></i></div>
                             </div>
                         </div>
                         <div class="movie-info-block">
-                            <h4 class="movie-card-title">@post.Title</h4>
+                            <h4 class="movie-card-title">@movie.Title</h4>
                             <div class="movie-card-meta">
-                                <span>@post.Year</span>
-                                <div class="movie-card-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <span class="movie-card-rating-val">@post.Rating.ToString("0.0")</span>
+                                <span class="badge bg-danger rounded-pill px-2 py-1 text-white" style="font-size: 0.7rem; letter-spacing: 0.3px;">@movie.Category</span>
+                                <div class="movie-card-rating text-danger-emphasis">
+                                    <i class="bi bi-play-btn-fill"></i>
+                                    <span class="movie-card-rating-val">Ep. @movie.EndEpisode</span>
                                 </div>
                             </div>
                         </div>

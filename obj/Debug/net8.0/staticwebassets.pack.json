@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\images\\admin_profile.jpg",
+      "PackagePath": "staticwebassets\\images\\admin_profile.jpg"
+    },
+    {
       "Id": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\images\\hero_save_me.png",
       "PackagePath": "staticwebassets\\images\\hero_save_me.png"
     },
@@ -247,6 +251,14 @@
     {
       "Id": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\uploads\\30e7c2ff-a20c-445c-862b-e2a95b043356_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\30e7c2ff-a20c-445c-862b-e2a95b043356_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\leang\\OneDrive\\Attachments\\Desktop\\WebMovie\\wwwroot\\uploads\\77a92de6-12ba-4502-b66e-c8154234c601_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\77a92de6-12ba-4502-b66e-c8154234c601_712a3782-1b1a-401e-97b3-45703d4339ce (1).jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebMovie.Microsoft.AspNetCore.StaticWebAssets.props",
