@@ -65,3 +65,4 @@ C:\Users\leang\OneDrive\Attachments\Desktop\WebMovie\obj\Debug\net8.0\refint\Web
 C:\Users\leang\OneDrive\Attachments\Desktop\WebMovie\obj\Debug\net8.0\WebMovie.pdb
 C:\Users\leang\OneDrive\Attachments\Desktop\WebMovie\obj\Debug\net8.0\WebMovie.genruntimeconfig.cache
 C:\Users\leang\OneDrive\Attachments\Desktop\WebMovie\obj\Debug\net8.0\ref\WebMovie.dll
+C:\Users\leang\OneDrive\Attachments\Desktop\WebMovie\obj\Debug\net8.0\WebMovie.sourcelink.json
